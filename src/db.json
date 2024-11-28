@@ -1,0 +1,50 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Dram"
+    },
+    {
+      "id": "2",
+      "name": "Tarix"
+    },
+    {
+      "id": "3",
+      "name": "Elm"
+    },
+    {
+      "id": "4",
+      "name": "Roman"
+    },
+    {
+      "id": "5",
+      "name": "Şeir"
+    }
+  ],
+  "books": [
+    {
+      "id": "33cb",
+      "categoryId": "3",
+      "title": "ewfwfsad",
+      "author": "sdafsafd",
+      "description": "asdfsadf",
+      "categoryName": ""
+    },
+    {
+      "id": "61ba",
+      "categoryName": "Elm",
+      "title": "khbjkjhfjkfhvkbj",
+      "author": "ljnl bln.n.n.",
+      "description": "lknlknn..",
+      "categoryId": "3"
+    },
+    {
+      "id": "6587",
+      "categoryName": "Şeir",
+      "title": "wfegfdgfdsg",
+      "author": "dfsgdsfgdfg",
+      "description": "gsdfsdfgfgd",
+      "categoryId": "5"
+    }
+  ]
+}
