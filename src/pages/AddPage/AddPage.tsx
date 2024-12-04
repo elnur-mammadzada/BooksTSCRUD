@@ -14,7 +14,13 @@ const AddPage: React.FC<AddPageProps> = ({ handleClose, open }) => {
     const dispatch = useAppDispatch();
     const { categories, bookById } = useAppSelector((state) => state.books);
 
-    const { setValue, handleSubmit, control, reset } = useForm({
+    const {
+        setValue,
+        handleSubmit,
+        control,
+        reset,
+        formState: { errors },
+    } = useForm({
         resolver: yupResolver(BookValidationSchema),
         defaultValues: {
             categoryName: bookById?.categoryName || "",
@@ -26,7 +32,6 @@ const AddPage: React.FC<AddPageProps> = ({ handleClose, open }) => {
     });
 
     const onSubmit = handleSubmit((data: any) => {
-        console.log(data);
         dispatch(addBook(data));
         reset();
         handleClose();
@@ -70,18 +75,23 @@ const AddPage: React.FC<AddPageProps> = ({ handleClose, open }) => {
                 style={{ width: "100%" }}
                 control={control}
             />
+            {errors.title && <p>This is required.</p>}
+
             <MUITextField
                 name='author'
                 placeholder='Müəllif'
                 style={{ width: "100%" }}
                 control={control}
             />
+            {errors.author && <p>This is required.</p>}
+
             <MUITextField
                 name='description'
                 placeholder='Təsvir'
                 style={{ width: "100%" }}
                 control={control}
             />
+            {errors.description && <p>This is required.</p>}
         </MUIDialog>
     );
 };

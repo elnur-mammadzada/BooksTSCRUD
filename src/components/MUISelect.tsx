@@ -9,6 +9,7 @@ const MUISelect: React.FC<MUISelectProps> = ({
     label,
     children,
     name,
+
 }) => {
     return (
         <FormControl sx={{ m: 1, minWidth: "100px" }} size='small'>
@@ -21,6 +22,7 @@ const MUISelect: React.FC<MUISelectProps> = ({
                 onChange={handleChange}
                 name={name}>
                 {children}
+
             </Select>
         </FormControl>
     );

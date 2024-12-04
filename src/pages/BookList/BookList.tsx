@@ -17,6 +17,8 @@ import MUIButton from "../../components/MUIButton";
 import { Book } from "../../types/types";
 import UpdatePage from "../UpdataPage/UpdatePage";
 import AddPage from "../AddPage/AddPage";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../features/authSlice";
 
 const BookList = () => {
     const [selectedValue, setSelectedValue] = useState("");
@@ -72,6 +74,12 @@ const BookList = () => {
         dispatch(closeSnackbar());
     };
 
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate("/");
+    };
+
     return (
         <>
             <div
@@ -92,6 +100,7 @@ const BookList = () => {
                 </MUISelect>
                 <MUIButton onClick={handleRefresh}>Yenilə</MUIButton>
                 <MUIButton onClick={handleAddDialogOpen}>Əlavə et</MUIButton>
+                <MUIButton onClick={handleLogout}>Çıxış edin</MUIButton>
             </div>
 
             <Grid container spacing={2}>

@@ -65,6 +65,10 @@ export interface MUITextFieldProps {
   control: any;
   placeholder: string;
   style?: React.CSSProperties;
+  className?: string;
+  label?: string;
+  error?: boolean;
+  type?: string
 }
 
 export interface UpdatePageProps {
@@ -77,5 +81,16 @@ export interface UpdatePageProps {
 export interface AddPageProps {
   handleClose: () => void;
   open: boolean;
- 
+}
+
+export interface User {
+  username: string;
+  password: string;
+}
+
+export interface UserState {
+  users: User[];
+  loading: boolean;
+  error: null;
+  isAuth: boolean;
 }

@@ -8,17 +8,24 @@ const MUITextField: React.FC<MUITextFieldProps> = ({
     control,
     placeholder,
     style,
+    label,
+    error,
+    className,
+    type,
 }) => {
     return (
         <Controller
             name={name}
             control={control}
-            render={({ field, fieldState: { error } }) => (
+            render={({ field }) => (
                 <TextField
                     {...field}
                     style={style}
                     placeholder={placeholder}
-                    helperText={error?.message}
+                    label={label}
+                    error={error}
+                    className={className}
+                    type={type}
                 />
             )}
         />
